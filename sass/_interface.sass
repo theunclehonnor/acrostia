@@ -1,0 +1,58 @@
+// ==== Grid ====
+*
+	box-sizing: border-box
+.container
+	max-width: 1100px
+	margin: auto
+@media (max-width: 1199px)
+	.container
+		max-width: 920px
+@media (max-width: 991px)
+	.container
+		max-width: 700px
+@media (max-width: 768px)
+	.container
+		max-width: 100%
+		padding: 0 20px
+// ==== /Grid ====
+// === Colors ===
+$color-white: #ffffff	
+$color-beruze: #74c7d5
+// === /Colors ===
+body
+	+font-lato
+	font-weight: 400
+img
+	max-width: 100%
+
+//  === navbar ===
+.navbar
+	top: 0
+	left: 0
+	right: 0
+	display: flex
+	justify-content: space-between
+	align-items: center
+	&__title
+		text-transform: lowercase
+		color: $color-white
+		+font-damion
+		font-size: 50px
+		font-weight: 400
+		line-height: 60px
+		margin: 0
+		cursor: default
+	&-links
+		flex-basis: 50%
+		display: flex
+		justify-content: space-between
+		padding-top: 15px
+	&__link
+		text-decoration: none
+		color: $color-white
+		font-size: 18px
+		font-weight: 400
+		line-height: 60px
+		&:hover
+			color: rgba($color-white, 0.4)
+//  === /navbar ===
