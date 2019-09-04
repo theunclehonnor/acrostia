@@ -1,8 +1,13 @@
 //On_load
 $(window).load(function () {
+	//Gamburger
+	$('.navbar__button').on('click', function (e) {
+		e.preventDefault();
+		$(this).toggleClass('menu-btn_active');
+		$('.navbar-links').toggleClass('navbar-links_active');
+	});
 	// Slider slick
 	$('.home-slider').slick({
-		draggable: false,
 		dots: true,
 		dotsClass: 'home-slider__dots',
 		prevArrow: $('.arrow-left'),

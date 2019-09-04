@@ -19,12 +19,42 @@
 $color-white: #ffffff	
 $color-beruze: #74c7d5
 // === /Colors ===
+// === Common ===
 body
 	+font-lato
 	font-weight: 400
 img
 	max-width: 100%
-
+.section
+	&-title
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+	&__title
+		color: $color-white
+		margin: 0
+		margin-bottom: 32px
+		font-size: 60px
+		font-weight: 300
+		line-height: 58px
+		text-transform: uppercase
+	&__subtitle-one
+		color: #ffffff
+		font-size: 20px
+		font-weight: 400
+		line-height: 58px
+		text-transform: uppercase
+		margin: 0
+		span
+			color: #ec9da2
+	&__subtitle-two
+		color: #ffcccf
+		font-size: 14px
+		font-weight: 400
+		line-height: 24px
+		margin: 0
+// === /Common ===
 //  === navbar ===
 .navbar
 	top: 0
@@ -53,6 +83,77 @@ img
 		font-size: 18px
 		font-weight: 400
 		line-height: 60px
+		margin-right: 10px
 		&:hover
 			color: rgba($color-white, 0.4)
+	&__button
+		margin-top: 18px
+		visibility: hidden
+		// display: block
+		width: 30px
+		height: 30px
+		background-color: rgba($color-white, 0.3)
+		border-radius: 50%
+		position: relative
+.navbar__button span,
+.navbar__button span::before,
+.navbar__button span::after 
+  position: absolute;
+  top: 50%; margin-top: -1px;
+  left: 50%; margin-left: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: $color-beruze;
+.navbar__button span::before,
+.navbar__button span::after 
+  content: ''
+  transition: 0.2s
+.navbar__button span::before 
+  	transform: translateY(-5px)
+.navbar__button span::after
+  	transform: translateY(5px)
+.menu-btn_active span
+	background-color: transparent
+.menu-btn_active span:before
+  transform: rotate(45deg)
+.menu-btn_active span:after
+  transform: rotate(-45deg)
+// === /Gamburger ===
+
+
+
 //  === /navbar ===
+	// === media ===
+@media ( max-width: 560px )
+	.navbar
+		flex-wrap: wrap
+		&-links
+			visibility: hidden
+			transition: 0.4s;
+			transform-origin: right center;
+			background-color: rgba($color-white, 0.3)
+			flex-basis: 100%
+			padding: 0 10px
+			border-top-right-radius: 15px
+			border-bottom-left-radius: 15px
+			transform: scaleX(0)
+			&_active
+				transform: scaleX(1)
+				opacity: 1
+				visibility: visible
+		&__title
+			line-height: 0
+		&__button
+			visibility: visible
+@media ( max-width: 320px )
+	.navbar
+		&-links
+			flex-direction: column
+			justify-content: center
+			align-items: center
+		&__link
+			line-height: 42px
+	
+	
+	
+// === /media ===

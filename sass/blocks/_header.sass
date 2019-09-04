@@ -14,6 +14,8 @@
 	&-slider
 		position: relative
 		z-index: 0
+		display: flex
+		justify-content: center
 		&-arrows
 			z-index: 15
 			position: absolute
@@ -32,7 +34,6 @@
 			list-style: none
 			padding: 0
 			bottom: 5%
-			left: 45%
 			li
 				width: 20px
 				height: 20px
@@ -85,5 +86,34 @@
 	cursor: pointer
 	&:focus
 		outline: none
-		
+@media ( max-width: 996px )
+	.home
+		&-content
+			justify-content: center
+			width: 555px
+			margin: auto
+			margin-top: 350px
+			&__title
+				font-size: 30px
+				line-height: 28px
+			&__subtitle
+				font-size: 50px
+				line-height: 50px
+@media ( max-width: 746px )
+	.home-slider-arrows
+		display: none
+@media ( max-width: 588px )
+	.home
+		&-content
+			width: 80%
+			&__title
+				padding-left: 0
+			&__subtitle
+				padding-right: 0		
+@media ( max-width: 375px )
+	.home
+		&-content
+			flex-direction: column
+			&__title
+				text-align: center
 
