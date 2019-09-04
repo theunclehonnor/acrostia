@@ -13,13 +13,14 @@
 		text-align: center
 		justify-content: space-between
 		&-card
-			background-color: rgba(#c8535a,0.8)
-			width: 260px
-			height: 400px
 			display: flex
 			flex-direction: column
 			justify-content: center
-			padding: 0 25px
+			&__wrap
+				background-color: rgba(#c8535a,0.8)
+				width: 260px
+				height: 400px
+				padding: 40px 25px
 			&__title
 				color: $color-white
 				font-size: 30px
@@ -32,4 +33,47 @@
 				font-size: 14px
 				font-weight: 400
 				line-height: 20px
-
+@media ( max-width: 1200px )
+	// .services
+	// 	height: 100%
+	// 	&-advantages
+	// 		flex-wrap: wrap
+	// 		margin: 0
+	// 		&-card
+	// 			align-items: center
+	// 			flex-basis: 50%
+	.services
+		&-advantages
+			&-card
+				&__wrap
+					width: 220px
+				&__title
+					font-size: 25px
+@media ( max-width: 990px )
+	.services
+		height: auto
+		&-advantages
+			flex-wrap: wrap
+			margin: 0
+			&-card
+				align-items: center
+				flex-basis: 50%
+				padding: 30px 25px
+				&__wrap
+					height: auto
+					width: auto
+@media ( max-width: 606px )
+	.services
+			&-advantages
+				flex-direction: column
+				&-card
+					padding: 2% 15%
+@media ( max-width: 560px )
+	.services
+		&-wrap
+			padding: 0
+@media ( max-width: 350px )
+	.services
+		&-advantages
+			&-card
+				padding: 1% 0
